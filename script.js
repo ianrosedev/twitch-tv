@@ -1,22 +1,22 @@
 //$(function() {
   var twitchUsers = ["freecodecamp", "storbeck", "terakilobyte", "habathcx", "RobotCaleb", "thomasballinger", "noobs2ninjas", "beohoff", "cretetion"];
   
-  var myString = "";
+var myString = "";
   
   for (var i = 0; i < twitchUsers.length; i++) {
     $.getJSON('https://api.twitch.tv/kraken/streams/' + twitchUsers[i] + '?callback=?',  function(data) {
       if (data.stream === null) {
-        myString += '<h1>' + data.stream +'</h1><br>';
+        myString += '<p>' + data._links.channel +'</p><br>';
         console.log(data);
-        console.log('not online');
+        console.log('not online')
         $('#main-text').html(myString);
       } else {
-        myString += '<h1>' + data.stream.game +'</h1><br>';
+        myString += '<p>' + data.stream.game +'</p>';
+        myString += '<p>' + data._links.channel +'</p><br>';
         console.log(data);
         console.log(data.stream.game);
         $('#main-text').html(myString);
       }
     });
-    console.log(twitchUsers[i]);
   }
 //});
