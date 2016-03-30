@@ -1,15 +1,15 @@
 body {
   background-color: #000;
 }
+
 a {
+  color: #393939;
   text-decoration: none;
 }
 
 #main-content {
   margin: 5vw;
 }
-
-
 
 .display-data {
   background-color: lightgray;
@@ -29,7 +29,10 @@ a {
   float: right;
 }
 
-.red {
-  background-color: red;
-  color: red;
+.offline {
+  background-color: #f02929;
+}
+
+.online {
+  background-color: #60ff60;
 }

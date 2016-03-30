@@ -11,11 +11,17 @@ $(function() {
         }
         
         var currentStatus = data.game;
-        if (currentStatus === null) {
+        if (currentStatus) {
+          currentStatus = currentStatus;
+          myString += '<p class="display-data online"><a href="' + data.url + '">';
+        } else if (currentStatus === null) {
           currentStatus = 'Offline';
+          myString += '<p class="display-data offline"><a href="' + data.url + '">';
+        } else {
+          currentStatus = '404';
+          myString += '<p class="display-data"><a href="' + data.url + '">';
         }
-       
-        myString += '<p class="display-data"><a href="' +  data.url + '">';
+        
         myString += '<img src="' + thumbnailIMG + '" class=\"thumbnail\">';
         myString += data.display_name + '</a>';
         myString += '<span class="status">' + currentStatus +'</span></p>';
