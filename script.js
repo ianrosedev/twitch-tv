@@ -10,9 +10,18 @@ $(function() {
           thumbnailIMG = 'smiley.jpg';
         }
         
-        myString += '<p class="display-data"><a href="' +  data.url + '">' + '<img src="' + thumbnailIMG + '" class=\"thumbnail\">' + data.display_name + '</a></p>';
+        var currentStatus = data.game;
+        if (currentStatus === null) {
+          currentStatus = 'Offline';
+        }
+       
+        myString += '<p class="display-data"><a href="' +  data.url + '">';
+        myString += '<img src="' + thumbnailIMG + '" class=\"thumbnail\">';
+        myString += data.display_name + '</a>';
+        myString += '<span class="status">' + currentStatus +'</span></p>';
         $('#main-text').html(myString);
         console.log(data);
+        
       } else {
         console.log('ERR');
       }
