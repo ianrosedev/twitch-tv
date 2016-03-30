@@ -1,0 +1,19 @@
+body {
+  background-color: #000;
+}
+
+#main-content {
+  margin: 5vw;
+}
+
+.display-data {
+  border-radius: 5px;
+  padding: 2vw;
+  background-color: lightgray;
+}
+
+.thumbnail {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
