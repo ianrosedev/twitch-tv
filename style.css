@@ -9,6 +9,10 @@ a {
 
 #header {
   color: #FFF;
+  font-size: 28px;
+}
+#header h1 {
+  margin-top: -1vh;
 }
 
 #main-content {
@@ -32,11 +36,10 @@ a {
 
 .display-name {
   display: block;
-
 }
 
 .status {
-float: right;
+  float: right;
   position: relative;
   top: 0%;
   transform: translateY(-100%);
