@@ -10,9 +10,13 @@ $(function() {
           thumbnailIMG = 'smiley.jpg';
         }
         
+        var displayName = data.display_name;
+        if(!displayName) {
+          displayName = data.message;
+        }
+        
         var currentStatus = data.game;
         if (currentStatus) {
-          currentStatus = currentStatus;
           myString += '<p class="display-data online"><a href="' + data.url + '">';
         } else if (currentStatus === null) {
           currentStatus = 'Offline';
@@ -20,11 +24,12 @@ $(function() {
         } else {
           currentStatus = 'No Account Data';
           thumbnailIMG = 'toilet.jpg';
-          myString += '<p class="display-data"><a href="' + data.url + '">';
+          //need to have both link disabled
+          myString += '<p class="display-data"><a href="#">';
         }
         
         myString += '<img src="' + thumbnailIMG + '" class=\"thumbnail\">';
-        myString += data.display_name;
+        myString += displayName;
         myString += '<span class="status">' + currentStatus +'</span></p>';
         $('#main-text').html(myString);
         console.log(data);
