@@ -34,14 +34,15 @@ $(function() {
         $('#main-text').html(myString);
         console.log(data);
         
-        
-          // Sort by online status
-        function sortMe(a, b) {
-          return a.className < b.className;
-        }
-        $(function(){
-          var elem = $('#main-text').find('p').sort(sortMe);
-          $('#main-text').append(elem);
+        // Sort by online status
+        $(document).ajaxComplete(function() {
+          function sortMe(a, b) {
+            return a.className < b.className;
+          }
+          $(function(){
+            var elem = $('#main-text').find('p').sort(sortMe);
+            $('#main-text').append(elem);
+          });
         });
       
       } else {
