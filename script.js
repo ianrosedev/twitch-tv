@@ -29,10 +29,9 @@ $(function() {
         }
         
         myString += '<img src="' + thumbnailIMG + '" class=\"thumbnail\">';
-        myString += displayName;
-        myString += '<span class="status">' + currentStatus +'</span></p>';
+        myString += '<span class="display-name">' + displayName + '</span>';
+        myString += '<span class="status">' + currentStatus + '</span></p>';
         $('#main-text').html(myString);
-        console.log(data);
         
         // Sort by online status
         $(document).ajaxComplete(function() {

@@ -7,8 +7,13 @@ a {
   text-decoration: none;
 }
 
+#header {
+  color: #FFF;
+}
+
 #main-content {
-  margin: 5vw;
+  margin-left: 5vw;
+  margin-right: 5vw;
 }
 
 .display-data {
@@ -25,8 +30,16 @@ a {
   margin-right: 2vw;
 }
 
+.display-name {
+  display: block;
+
+}
+
 .status {
-  float: right;
+float: right;
+  position: relative;
+  top: 0%;
+  transform: translateY(-100%);
 }
 
 .offline {
